@@ -1,0 +1,163 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.sidebar {
+  width: 30%;
+  background-color: #1c2b3a;
+  color: #fff;
+  padding: 30px;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.sidebar h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 5px 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  transform: translateX(5px);
+  color: #00bcd4;
+}
+
+.content {
+  width: 70%;
+  padding: 40px;
+  color: #333;
+  animation: slideInRight 1s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #1c2b3a;
+}
+
+header h2 {
+  margin: 5px 0 15px;
+  font-weight: normal;
+  color: #555;
+}
+
+.job h3, .job h4 {
+  margin: 5px 0;
+  color: #1c2b3a;
+}
+
+.job ul {
+  padding-left: 20px;
+}
+
+.references {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.references div {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-left: 4px solid #1c2b3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.references div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .references {
+    flex-direction: column;
+  }
+
+  .references div {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header h2 {
+    font-size: 1.2em;
+  }
+
+  .sidebar img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
